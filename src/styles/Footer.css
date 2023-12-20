@@ -1,0 +1,21 @@
+footer {
+    border-top: 1px solid grey;
+    width: 60%;
+    margin: 20px auto;
+    padding: 20px;
+    text-align: center;
+}
+
+footer p {
+    font-size: 20px;
+    color: grey;
+}
+
+footer a {
+    color: grey;
+    text-decoration: none;
+}
+
+.unir-text{
+    font-size: 12px;
+}

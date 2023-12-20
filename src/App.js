@@ -1,25 +1,50 @@
-import logo from './logo.svg';
+import React, {useEffect, useState} from "react";
+import {StoreContext} from "./context/StoreContext";
+import {GlobalRouter} from "./router/GlobalRouter";
+import 'bootstrap/dist/css/bootstrap.css';
 import './App.css';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    const [searchTerm, setSearchTerm] = useState('');
+    const [show, setShow] = useState(false);
+    const [selectedProduct, setSelectedProduct] = useState({});
+    const [cart, setCart] = useState(() => JSON.parse(localStorage.getItem('cart')) || []);
+    const [orderList, setOrderList] = useState(() => JSON.parse(localStorage.getItem('orderList')) || [])
+    const [orderConfirm, setOrderConfirm] = useState('');
+    const [isLight, setIsLight] = useState(() => JSON.parse(localStorage.getItem('isLight')) || false);
+
+    useEffect(() => {
+        localStorage.setItem('cart', JSON.stringify(cart));
+    }, [cart]);
+
+    useEffect(() => {
+        localStorage.setItem('orderList', JSON.stringify(orderList));
+    }, [orderList]);
+
+    useEffect(() => {
+        localStorage.setItem('isLight', JSON.stringify(isLight));
+    }, [isLight]);
+
+    useEffect(() => {
+        document.querySelector('body').setAttribute('data-bs-theme', isLight ? 'light' : 'dark');
+    })
+
+    return (
+        <div className="App">
+            <StoreContext.Provider
+                value={{
+                    searchTerm, setSearchTerm,
+                    show, setShow,
+                    selectedProduct, setSelectedProduct,
+                    cart, setCart,
+                    orderList, setOrderList,
+                    orderConfirm, setOrderConfirm,
+                    isLight, setIsLight
+                }}>
+                <GlobalRouter/>
+            </StoreContext.Provider>
+        </div>
+    );
 }
 
 export default App;

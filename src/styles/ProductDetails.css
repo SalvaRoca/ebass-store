@@ -1,0 +1,51 @@
+.close-btn {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    height: 32px;
+    width: 32px;
+    padding: 4px;
+    border: transparent;
+    border-radius: 5px;
+    color: darkslateblue;
+    background-color: transparent;
+}
+
+.close-btn:hover {
+    background-color: slateblue;
+    color: whitesmoke;
+}
+
+.product-image {
+    width: 90%;
+    margin:24px;
+}
+
+.product-description {
+    color: black;
+    margin: 30px;
+}
+
+.price-field {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.product-details-footer {
+    display: flex;
+    justify-content: space-between !important;
+    align-items: flex-start
+}
+
+.add-to-cart-btn {
+    border: transparent;
+    border-radius: 5px;
+    color: whitesmoke;
+    background-color: darkslateblue;
+    padding: 10px;
+}
+
+.add-to-cart-btn:hover {
+    background-color: slateblue;
+    color: whitesmoke;
+}

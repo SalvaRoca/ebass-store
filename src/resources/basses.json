@@ -1,0 +1,272 @@
+[
+  {
+    "productRef": "B01",
+    "brand": "Fender",
+    "name": "Precision Bass",
+    "description": "El Fender Precision Bass, también conocido como P-Bass, revolucionó la música al ser el primer bajo eléctrico con trastes y un diseño que sentó las bases para muchos modelos posteriores. Su sonido firme y su versatilidad lo han convertido en un estándar en la industria musical.",
+    "img": "https://sc1.musik-produktiv.com/pic-010105824xxl/fender-player-precision-bass-pf-3ts.jpg",
+    "strings": 4,
+    "price": 1500.0
+  },
+  {
+    "productRef": "B02",
+    "brand": "Fender",
+    "name": "Precision Bass V",
+    "description": "Una variante del clásico Precision Bass con 5 cuerdas, ofrece un rango extendido para aquellos que buscan tonos más profundos y versátiles.",
+    "img": "https://sc1.musik-produktiv.com/pic-010124526xxl/fender-american-professional-ii-p-bass-v-rw-3ts.jpg",
+    "strings": 5,
+    "price": 1700.0
+  },
+  {
+    "productRef": "B03",
+    "brand": "Fender",
+    "name": "Jazz Bass",
+    "description": "El Fender Jazz Bass, conocido como J-Bass, se caracteriza por su sonido brillante y versátil, ideal para una amplia gama de géneros musicales. Su diseño y sus pastillas permiten una mayor flexibilidad tonal.",
+    "img": "https://sc1.musik-produktiv.com/pic-010124548xxl/fender-american-professional-ii-jazz-bass-rw-blk.jpg",
+    "strings": 4,
+    "price": 1700.0
+  },
+  {
+    "productRef": "B04",
+    "brand": "Fender",
+    "name": "Jazz Bass Deluxe V",
+    "description": "Una variante de 5 cuerdas del clásico Jazz Bass, ofrece un mayor rango tonal y versatilidad para los músicos que buscan más opciones.",
+    "img": "https://sc1.musik-produktiv.com/pic-010117681xxl/fender-american-ultra-jazz-bass-v-rw-mbst.jpg",
+    "strings": 5,
+    "price": 1900.0
+  },
+  {
+    "productRef": "B05",
+    "brand": "Music Man",
+    "name": "StingRay",
+    "description": "El Music Man StingRay es reconocido por su sonido potente y su construcción robusta. Sus pastillas de alta salida brindan un tono distintivo y su diseño ergonómico lo hace cómodo de tocar durante largas sesiones.",
+    "img": "https://sc1.musik-produktiv.com/pic-010117197xl/sterling-by-music-man-stingray-classic-ray24ca-bsc.jpg",
+    "strings": 4,
+    "price": 2000.0
+  },
+  {
+    "productRef": "B06",
+    "brand": "Music Man",
+    "name": "StingRay Special HH",
+    "description": "Una variante de doble humbucker del clásico StingRay, ofrece un sonido más moderno y una mayor potencia para estilos musicales más agresivos.",
+    "img": "https://sc1.musik-produktiv.com/pic-010130383xxl/sterling-by-music-man-stingray-ray35-vsb.jpg",
+    "strings": 4,
+    "price": 2200.0
+  },
+  {
+    "productRef": "B07",
+    "brand": "Rickenbacker",
+    "name": "4003",
+    "description": "El Rickenbacker 4003 es conocido por su cuerpo distintivo y su característico sonido de agudos. Ha sido utilizado por numerosos bajistas icónicos y es apreciado por su apariencia y tono únicos.",
+    "img": "https://sc1.musik-produktiv.com/pic-010108118xxl/rickenbacker-standard-4003-mbl2.jpg",
+    "strings": 4,
+    "price": 2500.0
+  },
+  {
+    "productRef": "B08",
+    "brand": "Rickenbacker",
+    "name": "4003S",
+    "description": "Una variante del clásico 4003 con mejoras en la ergonomía y una configuración de pastillas ligeramente modificada para un tono más moderno.",
+    "img": "https://sc1.musik-produktiv.com/pic-010088605xxl/rickenbacker-standard-4003s-wn.jpg",
+    "strings": 4,
+    "price": 2700.0
+  },
+  {
+    "productRef": "B09",
+    "brand": "Gibson",
+    "name": "Grabber",
+    "description": "Los Gibson Grabber son bajos versátiles y reconocidos por su diseño innovador con pastillas ajustables que permiten una amplia gama de tonos. Han sido utilizados en numerosos géneros musicales, desde el funk hasta el rock progresivo.",
+    "img": "https://images.sellbrite.com/production/5118/06165337U/5785dd75-de9e-50b5-aa40-29d39160bc71.jpg",
+    "strings": 4,
+    "price": 1800.0
+  },
+  {
+    "productRef": "B10",
+    "brand": "Hofner",
+    "name": "500/1 (Violin Bass)",
+    "description": "El Hofner 500/1, también conocido como Violin Bass, es reconocido por su diseño distintivo y su asociación con Paul McCartney de The Beatles. Su sonido único y su ligereza lo hacen popular entre los amantes del vintage.",
+    "img": "https://sc1.musik-produktiv.com/pic-100036219xxl/hoefner-beatles-bass-hct-500-1-sb.jpg",
+    "strings": 4,
+    "price": 2200.0
+  },
+  {
+    "productRef": "B11",
+    "brand": "Hofner",
+    "name": "500/2 Club Bass",
+    "description": "Una variante de cuerpo sólido del clásico Violin Bass, ofrece un tono más enfocado y un diseño alternativo para diferentes preferencias de los bajistas.",
+    "img": "https://sc1.musik-produktiv.com/pic-010153784l/hoefner-club-bass-hct-500-2-sb.jpg",
+    "strings": 4,
+    "price": 2300.0
+  },
+  {
+    "productRef": "B12",
+    "brand": "Ibanez",
+    "name": "ATK",
+    "description": "El Ibanez ATK se destaca por su versatilidad tonal y su diseño ergonómico. Con su combinación de pastillas y configuraciones de ecualización, es ideal para músicos que buscan un rango tonal amplio.",
+    "img": "https://sc1.musik-produktiv.com/pic-010046913xl/ibanez-atk200-bk.jpg",
+    "strings": 4,
+    "price": 1600.0
+  },
+  {
+    "productRef": "B13",
+    "brand": "Ibanez",
+    "name": "ATK Premium",
+    "description": "Una variante de alta gama del ATK con mejoras en la electrónica y materiales de construcción premium para un rendimiento superior.",
+    "img": "https://sc1.musik-produktiv.com/pic-010085100xl/ibanez-atk810-wnf.jpg",
+    "strings": 5,
+    "price": 1900.0
+  },
+  {
+    "productRef": "B14",
+    "brand": "Yamaha",
+    "name": "BB454",
+    "description": "La serie BB de Yamaha ofrece una gama versátil de bajos que van desde modelos vintage hasta diseños modernos. Con diversas configuraciones de pastillas, es una opción popular para varios estilos musicales.",
+    "img": "https://cdn.shopify.com/s/files/1/0916/0836/products/39848_Yamaha_BB434M_TBS_IIK113492_2_4efccbdc-27fb-4d58-bc61-d539fb805998_720x720.jpg?v=1662398297",
+    "strings": 4,
+    "price": 1400.0
+  },
+  {
+    "productRef": "B15",
+    "brand": "Yamaha",
+    "name": "BB735A",
+    "description": "Una variante de gama alta de la serie BB de Yamaha, con mejoras en la electrónica y materiales de primera calidad para un rendimiento excepcional.",
+    "img": "https://sc1.musik-produktiv.com/pic-010097536l/yamaha-bb735a-dcs.jpg",
+    "strings": 5,
+    "price": 2100.0
+  },
+  {
+    "productRef": "B16",
+    "brand": "Warwick",
+    "name": "Thumb",
+    "description": "El Warwick Thumb es conocido por su construcción de alta calidad y su sonido potente. Su diseño ergonómico y sus opciones tonales lo hacen atractivo para bajistas profesionales.",
+    "img": "http://media.musiciansfriend.com/is/image/MMGS7/Thumb-Bass-Guitar-4-String/519118000000000-00-500x500.jpg",
+    "strings": 4,
+    "price": 2600.0
+  },
+  {
+    "productRef": "B17",
+    "brand": "Warwick",
+    "name": "Thumb NT",
+    "description": "Una variante sin trastes del Warwick Thumb, ofrece un tacto suave y un sonido más suave para músicos que buscan una experiencia de juego diferente.",
+    "img": "https://thumbs.static-thomann.de/thumb/padthumb600x600/pics/bdb/513917/16556196_800.jpg",
+    "strings": 4,
+    "price": 2800.0
+  },
+  {
+    "productRef": "B18",
+    "brand": "Fodera",
+    "name": "Monarch",
+    "description": "El Fodera Monarch es un bajo artesanal conocido por su calidad de construcción y su tono excepcional. Fabricado a medida, es una elección popular entre músicos exigentes.",
+    "img": "https://thumbs.static-thomann.de/thumb/padthumb600x600/pics/bdb/536648/17621400_800.jpg",
+    "strings": 4,
+    "price": 5000.0
+  },
+  {
+    "productRef": "B19",
+    "brand": "Fodera",
+    "name": "Monarch Deluxe",
+    "description": "Una versión de lujo del Fodera Monarch, con incrustaciones personalizadas, maderas selectas y una artesanía superior para un rendimiento excepcional.",
+    "img": "https://cdn.shopify.com/s/files/1/0343/4368/2183/products/fodera-bass-guitars-4-string-fodera-monarch-deluxe-4-walnut-burl-top-mahogany-body-w-rosewood-fingerboard-monarchdeluxe4-m44562d-17187629498503_2000x.jpg?v=1634710665",
+    "strings": 5,
+    "price": 6000.0
+  },
+  {
+    "productRef": "B20",
+    "brand": "Sadowsky",
+    "name": "MetroLine",
+    "description": "El Sadowsky MetroLine es apreciado por su artesanía superior y su versatilidad tonal. Es una opción popular tanto para músicos de sesión como para artistas en giras.",
+    "img": "https://www.megamusiconline.com.au/wp-content/uploads/2022/05/SDMLWL5ALOW.jpg",
+    "strings": 4,
+    "price": 2300.0
+  },
+  {
+    "productRef": "B21",
+    "brand": "Sadowsky",
+    "name": "MetroExpress",
+    "description": "Una variante más asequible del Sadowsky MetroLine, ofrece una calidad de sonido similar con materiales y componentes cuidadosamente seleccionados.",
+    "img": "https://sc1.musik-produktiv.com/pic-010144963xxl/sadowsky-metroexpress-21-4-vintage-j-j-maple-solid-olympic-white.jpg",
+    "strings": 4,
+    "price": 1800.0
+  },
+  {
+    "productRef": "B22",
+    "brand": "Lakland",
+    "name": "Skyline Series",
+    "description": "La serie Lakland Skyline ofrece bajos bien construidos con una amplia variedad de configuraciones tonales. Es conocida por su sonido distintivo y su comodidad de juego.",
+    "img": "https://sc1.musik-produktiv.com/pic-010055034xl/lakland-skyline-4402-mn-n.jpg",
+    "strings": 4,
+    "price": 1900.0
+  },
+  {
+    "productRef": "B23",
+    "brand": "Lakland",
+    "name": "Skyline Decade",
+    "description": "Una edición limitada de la serie Lakland Skyline con características especiales conmemorativas y mejoras tonales para celebrar una década de excelencia en la fabricación de bajos.",
+    "img": "https://images.reverb.com/image/upload/s--hiYiEclq--/f_auto,t_supersize/v1648063222/qng1ehfywhcffzgysqw3.png",
+    "strings": 4,
+    "price": 2500.0
+  },
+  {
+    "productRef": "B24",
+    "brand": "Dingwall",
+    "name": "NG-2 4",
+    "description": "El Dingwall NG-2 de 4 cuerdas, creado en colaboración con Adam Nolly Getgood, ofrece tonos bajos definidos y una ergonomía superior. Es apreciado por su versatilidad tonal.",
+    "img": "https://sc1.musik-produktiv.com/pic-010143651l/dingwall-ng-2-combustion-4-gd.jpg",
+    "strings": 4,
+    "price": 2800.0
+  },
+  {
+    "productRef": "B25",
+    "brand": "Dingwall",
+    "name": "NG-2 5",
+    "description": "El Dingwall NG-2 de 5 cuerdas, creado en colaboración con Adam Nolly Getgood, ofrece tonos bajos definidos y una ergonomía superior. Es apreciado por su versatilidad tonal.",
+    "img": "https://sc1.musik-produktiv.com/pic-010093115xl/dingwall-ng-2-combustion-5-dmw.jpg",
+    "strings": 5,
+    "price": 3000.0
+  },
+  {
+    "productRef": "B26",
+    "brand": "Dingwall",
+    "name": "NG-3 6",
+    "description": "El Dingwall NG-3 de 6 cuerdas, creado en colaboración con Adam Nolly Getgood, ofrece tonos bajos definidos y una ergonomía superior. Es apreciado por su versatilidad tonal.",
+    "img": "https://cdn.shopify.com/s/files/1/0343/4368/2183/products/dingwall-bass-guitars-5-string-or-more-dingwall-ng3-adam-nolly-getgood-signature-6-string-gloss-black-forrest-green-ng3-6-gbg-m-mh-30050154938503_2000x.jpg?v=1670296078",
+    "strings": 6,
+    "price": 3400.0
+  },
+  {
+    "productRef": "B27",
+    "brand": "Spector",
+    "name": "Euro LX 4",
+    "description": "Una variante de la serie Spector Euro de 4 cuerdas con mejoras en la electrónica y materiales seleccionados para un tono más productRefinado y un rendimiento excepcional.",
+    "img": "https://sc1.musik-produktiv.com/pic-010131068xxl/spector-euro-4-lx-whs.jpg",
+    "strings": 4,
+    "price": 2600.0
+  },
+  {
+    "productRef": "B28",
+    "brand": "Spector",
+    "name": "Euro LX 5",
+    "description": "Una variante de la serie Spector Euro de 5 cuerdas con mejoras en la electrónica y materiales seleccionados para un tono más refinado y un rendimiento excepcional.",
+    "img": "https://sc1.musik-produktiv.com/pic-010149341xxl/spector-euro-lx-4-black-stain-matte.jpg",
+    "strings": 5,
+    "price": 2800.0
+  },
+  {
+    "productRef": "B29",
+    "brand": "Spector",
+    "name": "NS Dimension 4",
+    "description": "El Spector NS Dimension de 4 cuerdas es conocido por su diseño moderno y su sonido versátil. Ofrece opciones tonales extensas y una ergonomía excepcional para bajistas exigentes.",
+    "img": "https://sc1.musik-produktiv.com/pic-010131071xxl/spector-ns-dimension-ms-4-super-faded-black.jpg",
+    "strings": 4,
+    "price": 2800.0
+  },
+  {
+    "productRef": "B30",
+    "brand": "Spector",
+    "name": "NS Dimension 5",
+    "description": "El Spector NS Dimension de 5 cuerdas es conocido por su diseño moderno y su sonido versátil. Ofrece opciones tonales extensas y una ergonomía excepcional para bajistas exigentes.",
+    "img": "https://sc1.musik-produktiv.com/pic-010131076xxl/spector-ns-dimension-ms-5-haunted-moss.jpg",
+    "strings": 5,
+    "price": 3000.0
+  }
+]

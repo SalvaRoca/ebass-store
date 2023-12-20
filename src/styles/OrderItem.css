@@ -1,0 +1,10 @@
+.order-item-sm-td {
+    width: 80px;
+}
+
+.order-item-img {
+    height: 60px;
+    width: 60px;
+    object-fit: cover;
+    border: 1px grey solid;
+}

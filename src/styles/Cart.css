@@ -1,0 +1,21 @@
+.cart-page {
+    margin-top: 30px;
+}
+
+.cart-title {
+    margin: 10px;
+}
+
+.cart-list {
+    margin: auto;
+    max-width: 640px;
+}
+
+.cart-total{
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+
+.loading-modal {
+    text-align: center;
+}

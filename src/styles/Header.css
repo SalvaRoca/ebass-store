@@ -1,0 +1,51 @@
+.header-navbar {
+    top: 10px;
+    margin-left: 50px;
+    margin-right: 50px;
+    z-index: 1000;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    color:whitesmoke;
+    background-color: darkslateblue;
+}
+
+.header-logo {
+    left: 30px;
+    height: 30px;
+    filter: invert(90%);
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.header-navbar-toggler.navbar-toggler {
+    border: none; /* Elimina el borde */
+    outline: none; /* Elimina el contorno al hacer clic */
+}
+
+.me-auto {
+    margin-right: 20px;
+}
+
+.bi-search::before {
+    margin-left: 20px;
+    margin-right: 5px;
+    color: lightgray;
+}
+
+.nav-user-dropdown {
+    margin-top: 6px;
+    margin-bottom: 6px;
+}
+
+.nav-user-dropdown-item {
+    text-decoration: none;
+    color: whitesmoke;
+
+}
+
+.search-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 10px;
+}

@@ -1,0 +1,16 @@
+.purchase-order-card {
+    max-width: 640px;
+    margin: auto;
+}
+
+.purchase-order-card-header {
+    font-size: 14px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.purchase-order-card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}

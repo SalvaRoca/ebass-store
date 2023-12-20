@@ -1,0 +1,22 @@
+.landing-page {
+    margin-top: 80px;
+    margin-bottom: 100px;
+    padding: 20px;
+}
+
+.landing-logo-light {
+    max-width:300px;
+    margin-bottom: 20px;
+    filter: invert(50%);
+}
+
+.landing-logo-dark {
+    max-width:300px;
+    margin-bottom: 20px;
+    filter: invert(80%);
+}
+
+.landing-subtitle {
+    margin-bottom: 50px;
+    color: lightgrey;
+}

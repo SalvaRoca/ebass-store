@@ -1,0 +1,20 @@
+[
+  {
+    "name": "Bajos",
+    "description": "La mejor selección de bajos eléctricos de los principales fabricantes: Fender, Musicman, Spector, Ibanez... ¡y más!",
+    "img": "https://wallpapercave.com/wp/wp2761544.jpg",
+    "uri": "/basses"
+  },
+  {
+    "name": "Amplificadores",
+    "description": "¡Haz que la sala vibre con tu bajo! Tenemos los mejores amplificadores y pantallas.",
+    "img": "https://cdn.wallpapersafari.com/13/7/SWYRrl.jpg",
+    "uri": "/amps"
+  },
+  {
+    "name": "Efectos",
+    "description": "Compresor, distorsión, fuzz, chorus, flanger y otros pedales de efectos para encajar en cualquier género. ",
+    "img": "https://noisegate.com.au/wp-content/uploads/2017/10/bass-pedal-collage.jpg",
+    "uri": "/fx"
+  }
+]

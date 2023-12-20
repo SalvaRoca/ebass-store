@@ -1,0 +1,14 @@
+.details-btn {
+    border: transparent;
+    border-radius: 5px;
+    color: mediumslateblue;
+    background-color: transparent;
+    padding: 6px;
+    height: 100%;
+    text-decoration: none;
+}
+
+.details-btn:hover {
+    background-color: darkslateblue;
+    color:whitesmoke;
+}
