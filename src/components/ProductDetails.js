@@ -1,5 +1,5 @@
-import React, {useContext} from "react";
-import {useNavigate} from "react-router-dom";
+import React, {useContext, useEffect} from "react";
+import {useLocation, useNavigate} from "react-router-dom";
 import '../styles/ProductDetails.css'
 import {StoreContext} from "../context/StoreContext";
 import {Modal} from "react-bootstrap";
@@ -7,12 +7,13 @@ import {Modal} from "react-bootstrap";
 // Componente de detalle de producto como ventana emergente
 export const ProductDetails = () => {
     const navigate = useNavigate();
+    const location = useLocation();
     const {show, setShow, selectedProduct, setSelectedProduct, cart, setCart} = useContext(StoreContext);
 
     const handleClose = () => {
         setShow(false);
         setSelectedProduct({});
-        navigate(window.location.pathname);
+        navigate(location.pathname);
     }
 
     const addToCart = () => {
@@ -20,6 +21,16 @@ export const ProductDetails = () => {
         setCart(tempCart);
         handleClose();
     }
+
+    // EventListener que detecta cuándo el usuario navega hacia atrás con su navegador, para que tenga el mismo efecto que cerrar el modal
+    useEffect(() => {
+        window.addEventListener('popstate', handleClose);
+
+        return () => {
+            window.removeEventListener('popstate', handleClose);
+        };
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, []);
 
     // Devuelve el componente solo si selectedProduct existe
     return selectedProduct && (

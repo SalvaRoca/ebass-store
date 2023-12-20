@@ -3,7 +3,7 @@ import {StoreContext} from "../context/StoreContext";
 
 // Custom hook para cancelar un pedido
 export const useCancelOrder = () => {
-    const {orderList, setOrderList} = useContext(StoreContext);
+    const {orderList, setOrderList, setOrderConfirm, setOrderCancel} = useContext(StoreContext);
 
     return (orderToCancel) => {
         const updatedOrderList = orderList.map(order => {
@@ -13,5 +13,7 @@ export const useCancelOrder = () => {
             return order;
         });
         setOrderList(updatedOrderList);
+        setOrderConfirm('');
+        setOrderCancel(orderToCancel.orderRef);
     };
 };

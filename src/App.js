@@ -11,6 +11,7 @@ function App() {
     const [cart, setCart] = useState(() => JSON.parse(localStorage.getItem('cart')) || []);
     const [orderList, setOrderList] = useState(() => JSON.parse(localStorage.getItem('orderList')) || [])
     const [orderConfirm, setOrderConfirm] = useState('');
+    const [orderCancel, setOrderCancel] = useState('');
     const [isLight, setIsLight] = useState(() => JSON.parse(localStorage.getItem('isLight')) || false);
 
     useEffect(() => {
@@ -39,6 +40,7 @@ function App() {
                     cart, setCart,
                     orderList, setOrderList,
                     orderConfirm, setOrderConfirm,
+                    orderCancel, setOrderCancel,
                     isLight, setIsLight
                 }}>
                 <GlobalRouter/>

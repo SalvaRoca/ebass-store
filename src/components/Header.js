@@ -19,9 +19,14 @@ export const Header = () => {
         navigate('/search'); // Navega a la página de búsqueda
     };
 
-    const clearSearch = () => {
+    const handleMenuClick = () => {
+        // Borra el contenido de la búsqueda
         setSearchTerm('');
         setSearchInput('');
+        // Si se muestra navbar-collapse, lo oculta al hacer
+        if (document.querySelector('.navbar-collapse').classList.contains('show')) {
+            document.querySelector('.header-navbar-toggler').click();
+        }
     }
 
     // Deshabilita el onSubmit de la barra de búsqueda
@@ -35,22 +40,16 @@ export const Header = () => {
                 <img className="header-logo" src={logo} alt="Bassmania"/>
             </Link>
             <Navbar.Toggle aria-controls="basic-navbar-nav" className="header-navbar-toggler"/>
-            <Navbar.Collapse id="basic-navbar-nav">
+            <Navbar.Collapse id="basic-navbar-nav" data-toggle="collapse" data-target=".navbar-collapse">
                 <Nav className="me-auto">
-                    <Link className="nav-link" to="/basses" onClick={clearSearch}>
-                        Bajos
-                    </Link>
-                    <Link className="nav-link" to="/amps" onClick={clearSearch}>
-                        Amplificadores
-                    </Link>
-                    <Link className="nav-link" to="/fx" onClick={clearSearch}>
-                        Efectos
-                    </Link>
+                    <Link className="nav-link" to="/basses" onClick={handleMenuClick}>Bajos</Link>
+                    <Link className="nav-link" to="/amps" onClick={handleMenuClick}>Amplificadores</Link>
+                    <Link className="nav-link" to="/fx" onClick={handleMenuClick}>Efectos</Link>
                 </Nav>
                 <NavDropdown className="nav-user-dropdown" title="¡Hola cliente!">
-                    <NavDropdown.Item as={Link} to="/orders">Pedidos</NavDropdown.Item>
+                    <NavDropdown.Item as={Link} to="/orders" onClick={handleMenuClick}>Pedidos</NavDropdown.Item>
                     <NavDropdown.Divider/>
-                    <NavDropdown.Item as={Link} to="/">Cerrar sesión</NavDropdown.Item>
+                    <NavDropdown.Item as={Link} to="/" onClick={handleMenuClick}>Cerrar sesión</NavDropdown.Item>
                 </NavDropdown>
                 <Form data-bs-theme="light" className="d-flex search-form" onSubmit={onSubmit}>
                     <Nav.Item><i className="bi bi-search search-icon"></i></Nav.Item>

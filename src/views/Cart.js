@@ -8,7 +8,7 @@ import {Button, Modal, Spinner, Table} from "react-bootstrap";
 // Vista de carrito
 export const Cart = () => {
     const [orderTotal, setOrderTotal] = useState();
-    const {show, setShow, cart, setCart, orderList, setOrderList, setOrderConfirm} = useContext(StoreContext);
+    const {show, setShow, cart, setCart, orderList, setOrderList, setOrderConfirm, setOrderCancel} = useContext(StoreContext);
     const navigate = useNavigate();
 
     // Al realizar pedido, muestra una ventana de carga, añade referencia y timestamp, registra el pedido, vacía el
@@ -29,6 +29,7 @@ export const Cart = () => {
             setShow(false);
             setCart([]);
             setOrderConfirm(orderObj.orderRef);
+            setOrderCancel('');
             navigate("/orders");
         }, 3000);
     }
