@@ -148,7 +148,8 @@ export const Products = () => {
     // Obtiene la lista de productos al montar el componente o al cambiar los parámetros de búsqueda
     useEffect(() => {
         if (isMounted.current) {
-            if (Object.keys(queryParams).length > 0 && enableQuery) {
+            if (Object.keys(queryParams).length > 0) {
+                console.log("fetch");
                 fetchProducts(queryParams).then(data => setProductList(data));
             }
         } else {
