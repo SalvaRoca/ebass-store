@@ -13,7 +13,7 @@ export const CartItem = ({productRef, updateOrderTotal}) => {
     const fetchProductsByProductRef = async (productRef) => {
         setIsLoading(true);
         try {
-            const response = await fetch(`https://spring-cloud-gateway-filters-production.up.railway.app/ms-store-products/api/v1/products/${productRef}/`, {
+            const response = await fetch(`${process.env.REACT_APP_API_URL}/ms-store-products/api/v1/products/${productRef}/`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'

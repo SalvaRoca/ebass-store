@@ -31,7 +31,7 @@ export const Products = () => {
     const fetchProducts = async (queryParams) => {
         setIsLoadingProducts(true);
         try {
-            const response = await fetch(`https://spring-cloud-gateway-filters-production.up.railway.app/ms-store-products/api/v1/products/`, {
+            const response = await fetch(`${process.env.REACT_APP_API_URL}/ms-store-products/api/v1/products/`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -56,7 +56,7 @@ export const Products = () => {
         setIsLoadingBrands(true);
         const brandQueryParams = {...queryParams, aggregate: ["brand"]};
         try {
-            const response = await fetch(`https://spring-cloud-gateway-filters-production.up.railway.app/ms-store-products/api/v1/products/`, {
+            const response = await fetch(`${process.env.REACT_APP_API_URL}/ms-store-products/api/v1/products/`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -81,7 +81,7 @@ export const Products = () => {
         setIsLoadingPrices(true);
         const priceQueryParams = {...queryParams, aggregate: ["price"]};
         try {
-            const response = await fetch(`https://spring-cloud-gateway-filters-production.up.railway.app/ms-store-products/api/v1/products/`, {
+            const response = await fetch(`${process.env.REACT_APP_API_URL}/ms-store-products/api/v1/products/`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'

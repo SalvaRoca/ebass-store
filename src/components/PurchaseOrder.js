@@ -16,7 +16,7 @@ export const PurchaseOrder = ({order}) => {
     // Método para cancelar un pedido a través de la API de Pedidos
     const fetchCancelOrder = async (orderId) => {
         try {
-            await fetch(`https://spring-cloud-gateway-filters-production.up.railway.app/ms-store-orders/api/v1/orders/${orderId}`, {
+            await fetch(`${process.env.REACT_APP_API_URL}/ms-store-orders/api/v1/orders/${orderId}`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
