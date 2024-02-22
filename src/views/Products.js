@@ -22,11 +22,10 @@ export const Products = () => {
     const [upperPriceLimit, setUpperPriceLimit] = useState(0);
     const [lowerPriceLabel, setLowerPriceLabel] = useState(0);
     const [upperPriceLabel, setUpperPriceLabel] = useState(0);
-    const [isLoadingProducts, setIsLoadingProducts] = useState(false);
-    const [isLoadingBrands, setIsLoadingBrands] = useState(false);
-    const [isLoadingPrices, setIsLoadingPrices] = useState(false);
+    const [isLoadingProducts, setIsLoadingProducts] = useState(true);
+    const [isLoadingBrands, setIsLoadingBrands] = useState(true);
+    const [isLoadingPrices, setIsLoadingPrices] = useState(true);
     const isMounted = useRef(false);
-
 
     // Método para obtener productos de la API según queryParams
     const fetchProducts = async (queryParams) => {
@@ -44,6 +43,7 @@ export const Products = () => {
             });
             setIsLoadingProducts(false);
             const data = await response.json();
+            console.log("Products fetched");
             return data.products;
         } catch (error) {
             console.error('Error:', error);
@@ -68,6 +68,7 @@ export const Products = () => {
             });
             setIsLoadingBrands(false);
             const data = await response.json();
+            console.log("Brands fetched");
             return data.aggs;
         } catch (error) {
             console.error('Error:', error);
@@ -92,6 +93,7 @@ export const Products = () => {
             });
             setIsLoadingPrices(false);
             const data = await response.json();
+            console.log("Prices fetched");
             return data.aggs;
         } catch (error) {
             console.error('Error:', error);
@@ -144,38 +146,29 @@ export const Products = () => {
 
     // Obtiene la lista de productos al montar el componente o al cambiar los parámetros de búsqueda
     useEffect(() => {
-        if (queryParams.minPrice && queryParams.minPrice && minPrice !== 0 && maxPrice !== 0 ) {
-                if (Object.keys(queryParams).length > 0) {
-                    console.log(queryParams);
-                    fetchProducts(queryParams).then(data => setProductList(data));
-                }
+        if (queryParams.minPrice && queryParams.minPrice && minPrice !== 0 && maxPrice !== 0) {
+            if (Object.keys(queryParams).length > 0) {
+                fetchProducts(queryParams).then(data => setProductList(data));
+            }
         }
         // eslint-disable-next-line
     }, [queryParams]);
 
     // Actualiza los límites de precio
     useEffect(() => {
-        if (isMounted.current) {
-            setQueryParams(prevState => ({
-                ...prevState,
-                minPrice: [lowerPriceLimit],
-                maxPrice: [upperPriceLimit]
-            }));
-        } else {
-            isMounted.current = true;
-        }
+        setQueryParams(prevState => ({
+            ...prevState,
+            minPrice: [lowerPriceLimit],
+            maxPrice: [upperPriceLimit]
+        }));
     }, [lowerPriceLimit, upperPriceLimit]);
 
     // Actualiza los parámetros de búsqueda
     useEffect(() => {
-        if (isMounted.current) {
-            setQueryParams(prevState => ({
-                ...prevState,
-                description: [searchTerm]
-            }));
-        } else {
-            isMounted.current = true;
-        }
+        setQueryParams(prevState => ({
+            ...prevState,
+            description: [searchTerm]
+        }));
     }, [searchTerm]);
 
     // Muestra el modal de ProductDetails si en la URL existe un parámetro productRef válido
@@ -284,7 +277,7 @@ export const Products = () => {
                         <p>Cargando los resultados...</p>
                         <Spinner animation="border" role="status"/>
                     </div>
-                ) : (productList.length === 0) ? (
+                ) : (productList === undefined || productList.length === 0) ? (
                     <p>¡Lo sentimos! No hemos encontrado lo que buscas.</p>
                 ) : (
                     <Row xs={1} md={5} className="g-1">
