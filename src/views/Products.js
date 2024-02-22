@@ -145,14 +145,10 @@ export const Products = () => {
     // Obtiene la lista de productos al montar el componente o al cambiar los parámetros de búsqueda
     useEffect(() => {
         if (queryParams.minPrice && queryParams.minPrice && minPrice !== 0 && maxPrice !== 0 ) {
-            if (isMounted.current) {
                 if (Object.keys(queryParams).length > 0) {
                     console.log(queryParams);
                     fetchProducts(queryParams).then(data => setProductList(data));
                 }
-            } else {
-                isMounted.current = true;
-            }
         }
         // eslint-disable-next-line
     }, [queryParams]);
