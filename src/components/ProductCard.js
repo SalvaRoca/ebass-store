@@ -18,7 +18,7 @@ export const ProductCard = ({product}) => {
             <Card.Img variant="top" src={product.img}/>
             <Card.Body>
                 <Card.Title>{product.brand}</Card.Title>
-                <Card.Subtitle>{product.name}</Card.Subtitle>
+                <Card.Subtitle>{product.model}</Card.Subtitle>
                 <ListGroup className="list-group-flush">
                     <ListGroup.Item>
                         <Link to={{

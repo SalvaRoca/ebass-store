@@ -1,4 +1,4 @@
-import React, {useState, useEffect, useContext} from "react";
+import React, {useEffect, useState, useContext} from "react";
 import {useNavigate} from "react-router-dom";
 import {StoreContext} from "../context/StoreContext";
 import '../styles/Cart.css'
@@ -7,37 +7,53 @@ import {Button, Modal, Spinner, Table} from "react-bootstrap";
 
 // Vista de carrito
 export const Cart = () => {
-    const [orderTotal, setOrderTotal] = useState();
-    const {show, setShow, cart, setCart, orderList, setOrderList, setOrderConfirm, setOrderCancel} = useContext(StoreContext);
+    const [isLoading, setIsLoading] = useState(false);
+    const {cart, setCart, orderTotal, setOrderTotal, setOrderConfirm, setOrderCancel} = useContext(StoreContext);
     const navigate = useNavigate();
+
+    // Método para realizar un pedido a través de la API de Pedidos
+    const fetchPlaceOrder = async (cart) => {
+        setIsLoading(true);
+        try {
+            const response = await fetch(`https://spring-cloud-gateway-filters-production.up.railway.app/ms-store-orders/api/v1/orders/`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    "targetMethod": "POST",
+                    "body": {
+                        "products": cart
+                    }
+                })
+            });
+            setIsLoading(false);
+            return await response.json();
+        } catch (error) {
+            console.error('Error:', error);
+            setIsLoading(false);
+        }
+    }
+
+    const updateOrderTotal = (productPrice) => {
+        setOrderTotal(orderTotal => orderTotal + productPrice);
+    }
 
     // Al realizar pedido, muestra una ventana de carga, añade referencia y timestamp, registra el pedido, vacía el
     // carrito, oculta la ventana de carga y redirige a la vista de pedidos realizados
     const placeOrder = () => {
-        setShow(true);
-        const orderDate = new Date();
-        setTimeout(() => {
-            const orderObj = {
-                orderRef: 'PO-' + orderDate.getFullYear() + (orderDate.getMonth() + 1) + orderDate.getDate() + '-' + (orderList.length + 1),
-                orderDate: orderDate,
-                orderTotal: orderTotal,
-                orderProducts: cart,
-                orderStatus: "Confirmado"
-            };
-            const tempOrderList = [...orderList, orderObj];
-            setOrderList(tempOrderList);
-            setShow(false);
+        fetchPlaceOrder(cart).then((order) =>{
             setCart([]);
-            setOrderConfirm(orderObj.orderRef);
+            setOrderConfirm(order.orderRef);
             setOrderCancel('');
             navigate("/orders");
-        }, 3000);
+        });
     }
 
-    // Actualiza el total del carrito cada vez que se modifica
     useEffect(() => {
-        setOrderTotal(cart.reduce((acc, product) => acc + product.price, 0));
-    }, [cart]);
+        setOrderTotal(0);
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, []);
 
     return (
         <div className="cart-page">
@@ -60,7 +76,7 @@ export const Cart = () => {
                             </tr>
                             </thead>
                             <tbody>
-                            {cart.map((item, index) => (<CartItem key={index} product={item}/>))}
+                            {cart.map((productRef) => (<CartItem key={productRef} productRef={productRef} updateOrderTotal={updateOrderTotal}/>))}
                             </tbody>
                         </Table>
                         <h4 className="cart-total">Total: {orderTotal} €</h4>
@@ -70,14 +86,19 @@ export const Cart = () => {
                             </Button>
                         </p>
                         <p>
-                            <Button variant="danger" size="sm" onClick={() => setCart([])}>
+                            <Button variant="danger" size="sm"
+                                    onClick={() => {
+                                        setCart([]);
+                                        setOrderTotal(0);
+                                    }
+                                }>
                                 <i className="bi bi-trash3"></i> Vaciar carrito
                             </Button>
                         </p>
                     </div>
                 )}
             </div>
-            <Modal className="loading-modal" show={show}>
+            <Modal className="loading-modal" show={isLoading}>
                 <Modal.Header>
                     Un momento, estamos procesando tu pedido...
                 </Modal.Header>

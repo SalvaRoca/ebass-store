@@ -1,29 +1,52 @@
-import React, {useState} from "react";
+import React, {useContext, useState} from "react";
 import {Badge, Button, Card, Modal, Table} from "react-bootstrap";
 import '../styles/PurchaseOrder.css'
 import {OrderItem} from "./OrderItem";
-import {useCancelOrder} from "../hooks/useCancelOrder";
+import {StoreContext} from "../context/StoreContext";
 
 // Componente de pedido realizado para mostrar como tarjeta en la vista de pedidos
 export const PurchaseOrder = ({order}) => {
-    const orderDate = new Date(order.orderDate);
+    const orderDate = new Date(order.date);
     const weekday = ["domingo", "lunes", "martes", "miércoles", "jueves", "viernes", "sábado"];
     const month = ["enero", "febrero", "marzo", "abril", "mayo", "junio", "julio", "agosto", "septiembre", "octubre", "noviembre", "diciembre"];
 
-    const cancelOrder = useCancelOrder();
     const [show, setShow] = useState(false);
+    const {setOrderConfirm, setOrderCancel} = useContext(StoreContext);
+
+    // Método para cancelar un pedido a través de la API de Pedidos
+    const fetchCancelOrder = async (orderId) => {
+        try {
+            await fetch(`https://spring-cloud-gateway-filters-production.up.railway.app/ms-store-orders/api/v1/orders/${orderId}/`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    "targetMethod": "PATCH",
+                    "queryParams": {
+                        "status": ["Cancelled"]
+                    }
+                })
+            });
+        } catch (error) {
+            console.error('Error:', error);
+        }
+    }
+
+    const cancelOrder = (order) => {
+        console.log(order);
+        fetchCancelOrder(order.id).then(() => {
+            setOrderConfirm('');
+            setOrderCancel(order.orderRef);
+        });
+    }
 
     return (
         <Card className="purchase-order-card">
             <Card.Header className="purchase-order-card-header">
                 <div>Pedido # {order.orderRef}</div>
                 <div className="purchase-order-datetime">
-                    {weekday[orderDate.getDay()]}, {orderDate.getDate()} {month[orderDate.getMonth()]} {orderDate.getFullYear()} ({orderDate.toLocaleTimeString('es-ES', {
-                    hour12: false,
-                    hour: '2-digit',
-                    minute: '2-digit',
-                    second: '2-digit'
-                })})
+                    {weekday[orderDate.getDay()]}, {orderDate.getDate()} {month[orderDate.getMonth()]} {orderDate.getFullYear()}
                 </div>
             </Card.Header>
             <Card.Body>
@@ -37,16 +60,28 @@ export const PurchaseOrder = ({order}) => {
                     </tr>
                     </thead>
                     <tbody>
-                    {order.orderProducts.map((item, index) => (<OrderItem key={index} product={item}/>))}
+                    {order.products.map((item, index) => (<OrderItem key={index} product={item}/>))}
                     </tbody>
+                    <tfoot>
+                    <tr>
+                        <td colSpan="3"><b>Total</b></td>
+                        <td><b>{order.total} €</b></td>
+                    </tr>
+                    </tfoot>
                 </Table>
             </Card.Body>
             <Card.Footer className="purchase-order-card-footer">
-                <div>Estado del pedido: <Badge bg={order.orderStatus === 'Cancelado' ? 'danger' : 'success'}>{order.orderStatus}</Badge></div>
-                {!(order.orderStatus === 'Cancelado') && ( // Mostrar el botón solo si no está cancelado
-                    <Button variant="danger" size="sm" onClick={() => setShow(true)}>
-                        <i className="bi bi-clipboard2-x"></i> Cancelar pedido
-                    </Button>
+                {!(order.status === 'Cancelled') ? (
+                    <>
+                        <div>
+                            Estado del pedido: <Badge bg="success">Confirmado</Badge>
+                        </div>
+                            <Button variant="danger" size="sm" onClick={() => setShow(true)}>
+                                <i className="bi bi-clipboard2-x"></i> Cancelar pedido
+                            </Button>
+                    </>
+                ) : (
+                    <Badge bg="danger">Cancelado</Badge>
                 )}
             </Card.Footer>
             <Modal show={show} onHide={() => setShow(false)}>

@@ -17,7 +17,7 @@ export const ProductDetails = () => {
     }
 
     const addToCart = () => {
-        const tempCart = [...cart, selectedProduct];
+        const tempCart = [...cart, selectedProduct.productRef];
         setCart(tempCart);
         handleClose();
     }
@@ -36,7 +36,7 @@ export const ProductDetails = () => {
     return selectedProduct && (
         <Modal show={show} scrollable={true} onHide={handleClose}>
             <Modal.Header closeButton>
-                <Modal.Title>{selectedProduct.brand} {selectedProduct.name}</Modal.Title>
+                <Modal.Title>{selectedProduct.brand} {selectedProduct.model}</Modal.Title>
             </Modal.Header>
             <Modal.Body>
                 <img className="product-image" src={selectedProduct.img} alt="product"/>
@@ -45,9 +45,15 @@ export const ProductDetails = () => {
             </Modal.Body>
             <Modal.Footer className="product-details-footer">
                 <div className="product-ref">Referencia de producto: {selectedProduct.productRef}</div>
-                <button className="add-to-cart-btn" onClick={addToCart}>
-                    <i className="bi bi-cart-plus"></i> Añadir al Carrito
-                </button>
+                {cart.some(item => item === selectedProduct.productRef) ? (
+                    <button disabled className="btn btn-secondary">
+                        <i className="bi bi-cart-check"></i> Ya está en tu carrito
+                    </button>
+                ) : (
+                    <button className="add-to-cart-btn" onClick={addToCart}>
+                        <i className="bi bi-cart-plus"></i> Añadir al Carrito
+                    </button>
+                )}
             </Modal.Footer>
         </Modal>
     );

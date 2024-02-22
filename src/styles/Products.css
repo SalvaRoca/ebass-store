@@ -2,8 +2,54 @@
     margin-top: 30px;
 }
 
+.products-banner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /* Opcional: alinea los elementos verticalmente en el centro */
+    margin: auto;
+    width: 90%;
+}
+
+.brands-dropdown-container {
+    width: 300px;
+    margin: auto;
+}
+
+.brands-dropdown {
+    font-size: 18px !important;
+    background-color: darkslateblue !important;
+    border: none !important;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    color: whitesmoke !important;
+}
+
 .products-title {
-    margin: 10px;
+    width: 300px;
+    margin: auto;
+}
+
+.slider-container {
+    width: 300px;
+    margin: auto;
+}
+
+.slider-labels div {
+    border: darkslateblue 1px solid;
+    padding: 5px;
+    border-radius: 5px;
+    margin: auto;
+}
+
+.slider-labels {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /* Alinea los elementos en el centro */
+    gap: 160px;
+}
+
+.price-slider {
+    margin: 20px auto;
+    width: 240px;
 }
 
 .products-list {

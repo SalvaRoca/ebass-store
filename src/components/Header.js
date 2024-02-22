@@ -1,5 +1,5 @@
 import {useContext, useState} from "react";
-import {Link, useNavigate} from 'react-router-dom';
+import {Link} from 'react-router-dom';
 import "../styles/Header.css"
 import {Form, FormControl, Nav, Navbar, NavDropdown} from 'react-bootstrap';
 import {StoreContext} from '../context/StoreContext';
@@ -9,21 +9,19 @@ import logo from '../resources/logo.svg';
 // Componente de barra de navegación en cabecera, incluyendo buscador de productos funcional
 export const Header = () => {
     const [searchInput, setSearchInput] = useState('');
-    const {setSearchTerm} = useContext(StoreContext);
-    const navigate = useNavigate();
+    const {title, setSearchTerm} = useContext(StoreContext);
 
     const handleSearch = (term) => {
         const trimmedTerm = term ? term.trim() : ''; // Verifica que term tenga valor antes de aplicar trim()
         setSearchInput(term);
         setSearchTerm(trimmedTerm); // Actualiza el término de búsqueda en el contexto al realizar la búsqueda
-        navigate('/search'); // Navega a la página de búsqueda
     };
 
     const handleMenuClick = () => {
         // Borra el contenido de la búsqueda
         setSearchTerm('');
         setSearchInput('');
-        // Si se muestra navbar-collapse, lo oculta al hacer
+        // Si se muestra navbar-collapse, lo oculta al hacer click en un enlace
         if (document.querySelector('.navbar-collapse').classList.contains('show')) {
             document.querySelector('.header-navbar-toggler').click();
         }
@@ -55,7 +53,7 @@ export const Header = () => {
                     <Nav.Item><i className="bi bi-search search-icon"></i></Nav.Item>
                     <FormControl
                         type="search"
-                        placeholder="Busca en el catálogo..."
+                        placeholder={`Busca ${title}...`}
                         className="mr-2"
                         aria-label="Search"
                         value={searchInput}
