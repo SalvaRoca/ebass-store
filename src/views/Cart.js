@@ -15,7 +15,7 @@ export const Cart = () => {
     const fetchPlaceOrder = async (cart) => {
         setIsLoading(true);
         try {
-            const response = await fetch(`https://spring-cloud-gateway-filters-production.up.railway.app/ms-store-orders/api/v1/orders/`, {
+            const response = await fetch(`https://spring-cloud-gateway-filters-production.up.railway.app/ms-store-orders/api/v1/orders`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'

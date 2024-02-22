@@ -288,7 +288,7 @@ export const Products = () => {
                         <p>Cargando los resultados...</p>
                         <Spinner animation="border" role="status"/>
                     </div>
-                ) : productList.length === 0 ? (
+                ) : (productList === undefined || productList.length === 0) ? (
                     <p>¡Lo sentimos! No hemos encontrado lo que buscas.</p>
                 ) : (
                     <Row xs={1} md={5} className="g-1">
