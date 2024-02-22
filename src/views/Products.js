@@ -25,7 +25,6 @@ export const Products = () => {
     const [isLoadingProducts, setIsLoadingProducts] = useState(false);
     const [isLoadingBrands, setIsLoadingBrands] = useState(false);
     const [isLoadingPrices, setIsLoadingPrices] = useState(false);
-    const [enableQuery, setEnableQuery] = useState(false);
     const isMounted = useRef(false);
 
 
@@ -105,8 +104,6 @@ export const Products = () => {
         if (isMounted.current) {
             let category;
 
-            setEnableQuery(false); // Previene que se ejecuten más consultas de las necesarias a la API
-
             switch (location.pathname) {
                 case '/basses':
                     setTitle('Bajos');
@@ -147,15 +144,18 @@ export const Products = () => {
 
     // Obtiene la lista de productos al montar el componente o al cambiar los parámetros de búsqueda
     useEffect(() => {
-        if (isMounted.current) {
-            if (Object.keys(queryParams).length > 0 && enableQuery) {
-                console.log("Fetching");
-                fetchProducts(queryParams).then(data => setProductList(data));
+        if (queryParams.minPrice && queryParams.minPrice && minPrice !== 0 && maxPrice !== 0 ) {
+            if (isMounted.current) {
+                if (Object.keys(queryParams).length > 0) {
+                    console.log(queryParams);
+                    fetchProducts(queryParams).then(data => setProductList(data));
+                }
+            } else {
+                isMounted.current = true;
             }
-        } else {
-            isMounted.current = true;
         }
-    }, [queryParams, enableQuery]);
+        // eslint-disable-next-line
+    }, [queryParams]);
 
     // Actualiza los límites de precio
     useEffect(() => {
@@ -165,7 +165,6 @@ export const Products = () => {
                 minPrice: [lowerPriceLimit],
                 maxPrice: [upperPriceLimit]
             }));
-            setEnableQuery(true)
         } else {
             isMounted.current = true;
         }
